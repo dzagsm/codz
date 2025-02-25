@@ -1,0 +1,16 @@
+{
+  "name": "coddz",
+  "version": "1.0.0",
+  "description": "Algerian delivery form handler",
+  "main": "js/formHandler.js",
+  "files": [
+    "js/formHandler.js",
+    "js/locationData.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["algeria", "delivery", "form"],
+  "author": "Your Name",
+  "license": "MIT"
+}

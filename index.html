@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج الطلب</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --error-color: #f8d7da;
+            --border-color: #ddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            direction: rtl;
+        }
+
+        .checkout-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px var(--shadow-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        input:disabled {
+            background-color: #f5f5f5;
+            cursor: not-allowed;
+        }
+
+        .single-submit {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .single-submit:hover {
+            background-color: #45a049;
+        }
+
+        .single-submit:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        #checkout-summary {
+            margin-top: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .summary-header {
+            background-color: #f8f9fa;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 4px 4px 0 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .summary-content {
+            padding: 15px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .checkout-form {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="checkout-form">
+        <div class="form-group">
+            <label for="phone">رقم الهاتف:</label>
+            <input type="tel" name="extra_fields[custom_field_tu2DLh0lAkUbo63f]" placeholder="05xxxxxxxx" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="wilaya">الولاية:</label>
+            <select name="extra_fields[custom_field_utgP5zvENdO1aOcU]" required>
+                <option value="">اختر الولاية</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="commune">البلدية:</label>
+            <select name="extra_fields[custom_field_Z61SR11WaVdi4I3x]" required>
+                <option value="">اختر البلدية</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="delivery">خيار التوصيل:</label>
+            <select name="extra_fields[custom_field_pUkUaozcQn7ZauLx]" required>
+                <option value="">اختر طريقة التوصيل</option>
+                <option value="التوصيل للمنزل">التوصيل للمنزل</option>
+                <option value="استلام من المحل">استلام من المحل</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="address">العنوان:</label>
+            <input type="text" name="extra_fields[custom_field_c725WmqO53XYKywu]" placeholder="أدخل عنوان التوصيل">
+        </div>
+        
+        <div class="form-group">
+            <label for="delivery-price">سعر التوصيل:</label>
+            <input type="text" name="extra_fields[custom_field_fxYCOTcrDrflGANv]" readonly>
+        </div>
+        
+        <button class="single-submit" type="submit" disabled>إرسال الطلب</button>
+    </div>
+
+    <script src="js/locationData.js"></script>
+    <script src="js/formHandler.js"></script>
+</body>
+</html>
